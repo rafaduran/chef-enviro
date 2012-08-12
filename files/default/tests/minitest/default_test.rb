@@ -10,11 +10,11 @@ describe_recipe 'enviro::default' do
   include MiniTest::Chef::Resources
 
   it 'installed the vim package' do
-    package(node['enviro']['vim']['pkg_name']).must_be_installed
+    package(node[:enviro][:vim][:pkg_name]).must_be_installed
   end
 
   it 'update apt and created success stamp file on Debian/Ubuntu' do
-    if %w{ubuntu debian}.include? node['platform'] then
+    if %w{ubuntu debian}.include? node[:platform] then
       file('/var/lib/apt/periodic/update-success-stamp').must_exist
     end
   end

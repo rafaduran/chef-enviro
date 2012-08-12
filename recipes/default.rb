@@ -17,17 +17,17 @@
 # limitations under the License.
 #
 
-case node['platform']
+case node[:platform]
 when 'ubuntu', 'debian'
   include_recipe 'apt'
 when 'centos', 'redhat'
 else
-  message = "We are sorry but 'enviro' cookbook does not support #{node['platform']} yet."
+  message = "We are sorry but 'enviro' cookbook does not support #{node[:platform]} yet."
   Chef::Log::error(message)
   raise Chef::Exceptions::UnsupportedAction.new message
 end
 
 package 'vim' do
-  package_name  node['enviro']['vim']['pkg_name']
+  package_name  node[:enviro][:vim][:pkg_name]
   action        :install
 end
