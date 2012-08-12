@@ -19,7 +19,7 @@
 
 case node['platform']
 when 'centos', 'redhat'
-  default['vim']['pkg_name'] = 'vim-enhanced'
+  default['enviro']['vim']['pkg_name'] = 'vim-enhanced'
 else
-  default['vim']['pkg_name'] = 'vim'
+  default['enviro']['vim']['pkg_name'] = 'vim'
 end

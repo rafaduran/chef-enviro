@@ -28,6 +28,6 @@ else
 end
 
 package 'vim' do
-  package_name  node['vim']['pkg_name']
+  package_name  node['enviro']['vim']['pkg_name']
   action        :install
 end
